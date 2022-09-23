@@ -13,7 +13,14 @@ namespace TaskTwo
 
         public TCircle(double radius)
         {
-            this.Radius = radius; // set field using property conditions
+            if (radius < 0)
+            {
+                throw new Exception("Circle radius cannot be negative");
+            }
+            else
+            {
+                this.radius = radius;
+            }
         }
 
         public TCircle(TCircle circleToCopy)
@@ -47,7 +54,7 @@ namespace TaskTwo
             return Math.PI * radius * radius;
         }
 
-        public double CalculateCircleSectorArea(double angle)
+        public double CalculateCircleSectorArea(double angle) // C.I. - radians
         {
             if (angle >= -2 * Math.PI & angle <= 2 * Math.PI)
             {

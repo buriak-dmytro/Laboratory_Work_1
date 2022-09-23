@@ -13,15 +13,13 @@ namespace TaskOne
         private bool oneSolution;
         private bool twoSolutions;
 
-        private double[] solutions;
+        private double[] solutions = new double[2];
 
         public QuadraticEquation()
         {
             coeffA = 0;
             coeffB = 0;
             coeffC = 0;
-
-            SolveEquation();
         }
 
         public QuadraticEquation(double coeffA, double coeffB, double coeffC)
@@ -29,38 +27,36 @@ namespace TaskOne
             this.coeffA = coeffA;
             this.coeffB = coeffB;
             this.coeffC = coeffC;
-
-            SolveEquation();
         }
 
         public double CoeffA
         {
             get { return coeffA; }
-            set { coeffA = value; SolveEquation(); }
+            set { coeffA = value; }
         }
 
         public double CoeffB
         {
             get { return coeffB; }
-            set { coeffB = value; SolveEquation(); }
+            set { coeffB = value; }
         }
 
         public double CoeffC
         {
             get { return coeffC; }
-            set { coeffC = value; SolveEquation(); }
+            set { coeffC = value; }
         }
 
-        public bool InfiniteNumberOfSolutions { get { return infiniteNumberOfSolutions; } }
-        public bool EmptySetOfSolutions { get { return emptySetOfSolutions; } }
-        public bool OneSolution { get { return oneSolution; } }
-        public bool TwoSolutions { get { return twoSolutions; } }
+        //public bool InfiniteNumberOfSolutions { get { return infiniteNumberOfSolutions; } }
+        //public bool EmptySetOfSolutions { get { return emptySetOfSolutions; } }
+        //public bool OneSolution { get { return oneSolution; } }
+        //public bool TwoSolutions { get { return twoSolutions; } }
 
         public void ShowSolutions()
         {
             if (infiniteNumberOfSolutions)
             {
-                Console.WriteLine("There are infinite number of solutions of current quadratic equation");
+                Console.WriteLine("There is infinite number of solutions of current quadratic equation");
             }
             else if (emptySetOfSolutions)
             {
@@ -172,15 +168,16 @@ namespace TaskOne
                 }
             }
         }
-        
-        private double CalculateDiscriminator()
+
+        protected double CalculateDiscriminator()
         {
             return coeffB * coeffB - 4 * coeffA * coeffC;
         }
 
-        public void ResetSolutions()
+        protected void ResetSolutions()
         {
-            solutions = null;
+            solutions[0] = 0;
+            solutions[1] = 0;
 
             infiniteNumberOfSolutions = false;
             emptySetOfSolutions = false;
@@ -196,7 +193,7 @@ namespace TaskOne
                 {
                     if (infiniteNumberOfSolutions)
                     {
-                        throw new Exception("There are infinite number of solutions of current quadratic equation");
+                        throw new Exception("There is infinite number of solutions of current quadratic equation");
                     }
                     else if (emptySetOfSolutions)
                     {
@@ -204,12 +201,10 @@ namespace TaskOne
                     }
                     else if (oneSolution)
                     {
-                        Console.WriteLine("There is one solution of current quadratic equation");
                         return solutions[0];
                     }
                     else if (twoSolutions)
                     {
-                        Console.WriteLine("There are two solutions of current quadratic equation");
                         return solutions[i];
                     }
                     else

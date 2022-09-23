@@ -6,10 +6,7 @@ namespace TaskTwo
     {
         public TSphere() : base() { }
 
-        public TSphere(double radius)
-        {
-            this.Radius = radius;
-        }
+        public TSphere(double radius) : base(radius) { }
 
         public TSphere(TSphere sphereToCopy) : base(sphereToCopy) { }
 
