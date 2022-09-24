@@ -2,7 +2,7 @@
 
 namespace TaskTwo
 {
-    class TSphere : TCircle
+    public class TSphere : TCircle
     {
         public TSphere() : base() { }
 

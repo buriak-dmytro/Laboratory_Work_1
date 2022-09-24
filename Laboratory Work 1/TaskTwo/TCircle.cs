@@ -2,7 +2,7 @@
 
 namespace TaskTwo
 {
-    class TCircle
+    public class TCircle
     {
         protected double radius;
 
