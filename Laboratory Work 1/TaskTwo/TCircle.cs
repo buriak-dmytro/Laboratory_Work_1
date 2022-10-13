@@ -71,48 +71,48 @@ namespace TaskTwo
             return 2 * Math.PI * radius;
         }
 
-        public static bool operator ==(TCircle circle1, TCircle circle2)
-        {
-            if (circle1.Radius == circle2.Radius)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        //public static bool operator ==(TCircle circle1, TCircle circle2)
+        //{
+        //    if (circle1.radius == circle2.radius)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
 
-        public static bool operator !=(TCircle circle1, TCircle circle2)
-        {
-            if (circle1.Radius != circle2.Radius)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        //public static bool operator !=(TCircle circle1, TCircle circle2)
+        //{
+        //    if (circle1.radius != circle2.radius)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
 
         public static TCircle operator +(TCircle circle1, TCircle circle2)
         {
-            return new TCircle(circle1.Radius + circle2.Radius);
+            return new TCircle(circle1.radius + circle2.radius);
         }
 
         public static TCircle operator -(TCircle circle1, TCircle circle2)
         {
-            return new TCircle(Math.Abs(circle1.Radius + circle2.Radius));
+            return new TCircle(Math.Abs(circle1.radius - circle2.radius));
         }
 
         public static TCircle operator *(double coeff, TCircle circle)
         {
-            return new TCircle(coeff * circle.Radius);
+            return new TCircle(coeff * circle.radius);
         }
 
         public static TCircle operator *(TCircle circle, double coeff)
         {
-            return new TCircle(coeff * circle.Radius);
+            return new TCircle(coeff * circle.radius);
         }
     }
 }

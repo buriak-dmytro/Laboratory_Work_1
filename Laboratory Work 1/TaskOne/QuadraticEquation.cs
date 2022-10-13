@@ -47,11 +47,6 @@ namespace TaskOne
             set { coeffC = value; }
         }
 
-        //public bool InfiniteNumberOfSolutions { get { return infiniteNumberOfSolutions; } }
-        //public bool EmptySetOfSolutions { get { return emptySetOfSolutions; } }
-        //public bool OneSolution { get { return oneSolution; } }
-        //public bool TwoSolutions { get { return twoSolutions; } }
-
         public void ShowSolutions()
         {
             if (infiniteNumberOfSolutions)
